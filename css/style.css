@@ -1,14 +1,17 @@
-    --accent: #C8A951;        /* zlatá — akcentní barva */
-    --accent-light: #E0C96E;  /* světlejší zlatá */
-    --secondary: #5B8DB8;     /* modrá — vedlejší barva */
-    --primary-rgb: 27, 42, 74;   /* RGB trojice pro rgba() odstíny (stíny, rámečky) */
-    --accent-rgb: 200, 169, 81;
-    --secondary-rgb: 91, 141, 184;
-    --dark: #1A1A2E;          /* téměř černá — text */
-    --text: #3D3D5C;          /* tmavě šedá — běžný text */
-    --text-light: #6B6B8A;    /* světlejší šedá — vedlejší text */
-    --light: #F8F6F0;         /* krémová — pozadí */
-    --light-alt: #EDE9E0;     /* tmavší krémová */
+  :root {
+    --primary: #3E454D;       /* grafitová šedá — hlavní barva */
+    --primary-light: #525B65; /* světlejší šedá */
+    --accent: #BC5A49;        /* terakota — akcentní barva */
+    --accent-light: #D07A68;  /* světlejší terakota */
+    --secondary: #7FA08F;     /* sages zelená — vedlejší barva */
+    --primary-rgb: 62, 69, 77;   /* RGB trojice pro rgba() odstíny (stíny, rámečky) */
+    --accent-rgb: 188, 90, 73;
+    --secondary-rgb: 127, 160, 143;
+    --dark: #2A2E33;          /* téměř černá — text */
+    --text: #474D54;          /* tmavě šedá — běžný text */
+    --text-light: #767D85;    /* světlejší šedá — vedlejší text */
+    --light: #F7F7F5;         /* světlá neutralní — pozadí */
+    --light-alt: #ECECE9;     /* tmavší neutralní */
     --white: #FFFFFF;
     --shadow: 0 4px 24px rgba(var(--primary-rgb), 0.08);
     --shadow-lg: 0 12px 48px rgba(var(--primary-rgb), 0.12);
@@ -1100,3 +1103,4 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
