@@ -335,6 +335,15 @@ nav.scrolled {
     align-items: center;
 }
 
+/* Hlavní fotka v hero sekci */
+.hero-photo {
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
 .hero-image-placeholder {
     width: 100%;
     max-width: 440px;
@@ -1027,8 +1036,31 @@ footer {
         justify-content: center;
     }
 
+    /* [MOBIL] Hlavní fotka se na mobilu zobrazuje pod textem */
     .hero-visual {
-        display: none;
+        width: 100%;
+        margin-top: 3rem;
+    }
+
+    .hero-visual img {
+        max-width: 320px;
+        box-shadow: var(--shadow-lg);
+    }
+
+    /* Dekorativní kruhy — menší, aby nezasahovaly do fotky */
+    .hero-deco-1 {
+        width: 200px;
+        height: 200px;
+        top: auto;
+        bottom: -5%;
+        right: -8%;
+    }
+
+    .hero-deco-2 {
+        width: 140px;
+        height: 140px;
+        top: 0;
+        left: -6%;
     }
 
     .about-grid {
@@ -1103,4 +1135,6 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+
 
