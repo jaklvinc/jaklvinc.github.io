@@ -51,14 +51,17 @@ document.querySelectorAll('.fade-up').forEach(el => {
 });
 
 // === Contact form handling (Google Sheets + email) ===
+// Formulář je jen na hlavní stránce — na ostatních (např. FAQ) ho ignorujeme
 const contactForm = document.getElementById('contactForm');
-const formStatus = document.getElementById('formStatus');
 
-// URL web app z Google Apps Script (Extensions → Apps Script → Deploy → Web app)
-const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwP-uzjJlXpvJI_12Ep929Tg83W8qVO5tXVKE698lyMNAmqrgvmn-XTi2U0Kb1TNUvL/exec';
+if (contactForm) {
+    const formStatus = document.getElementById('formStatus');
 
-// [ANTI-SPAM] Čas načtení stránky — pro "time trap" (viz doPost v Apps Script)
-const PAGE_LOADED_AT = Date.now();
+    // URL web app z Google Apps Script (Extensions → Apps Script → Deploy → Web app)
+    const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwP-uzjJlXpvJI_12Ep929Tg83W8qVO5tXVKE698lyMNAmqrgvmn-XTi2U0Kb1TNUvL/exec';
+
+    // [ANTI-SPAM] Čas načtení stránky — pro "time trap" (viz doPost v Apps Script)
+    const PAGE_LOADED_AT = Date.now();
 
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -105,6 +108,7 @@ contactForm.addEventListener('submit', function(e) {
         submitBtn.disabled = false;
     });
 });
+} // konec if (contactForm) — formulář není na každé stránce
 
 // === Smooth scroll for anchor links ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
