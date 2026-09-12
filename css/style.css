@@ -1,4 +1,4 @@
-  :root {
+:root {
     --primary: #3E454D;       /* grafitová šedá — hlavní barva */
     --primary-light: #525B65; /* světlejší šedá */
     --accent: #BC5A49;        /* terakota — akcentní barva */
@@ -26,7 +26,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -229,6 +228,7 @@ nav.scrolled {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    width: 100%;
 }
 
 .hero-content {
@@ -613,6 +613,56 @@ nav.scrolled {
     flex-shrink: 0;
 }
 
+/* Co konkrétně nabízím — zvýrazněný panel s klíčovými sliby */
+.offer-highlight {
+    margin-bottom: 3rem;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2.75rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(var(--primary-rgb), 0.06);
+    border-top: 4px solid var(--accent);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.offer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.offer-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.12) 0%, rgba(var(--secondary-rgb), 0.12) 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.offer-icon svg {
+    width: 26px;
+    height: 26px;
+    color: var(--accent);
+}
+
+.offer-item p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 0;
+}
+
+.offer-item strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
 /* === PROCESS === */
 .process {
     background: var(--white);
@@ -828,6 +878,13 @@ nav.scrolled {
     margin-bottom: 0.15rem;
 }
 
+/* Vedlejší poznámka pod popiskem (např. u sídla) — tlumená, méně výrazná */
+.label-note {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-light);
+}
+
 .contact-item-value {
     color: var(--text-light);
 }
@@ -1024,16 +1081,16 @@ footer {
 @media (max-width: 968px) {
     .hero-inner {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
     }
 
     .hero-desc {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .hero-buttons {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     /* [MOBIL] Hlavní fotka se na mobilu zobrazuje pod textem */
@@ -1106,6 +1163,12 @@ footer {
 
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .offer-highlight {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 1.75rem;
     }
 
     .process-steps {
