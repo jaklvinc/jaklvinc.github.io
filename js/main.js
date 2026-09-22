@@ -1,6 +1,6 @@
 /* ============================================================
    Halka Jaklová — Rodinná mediace v Praze
-   Chování webu: mobilní menu, scroll efekty, animace, formulář
+   Chování webu: mobilní menu, stín lišty při scrollu, formulář
    ============================================================ */
 
 // === Mobile nav toggle ===
@@ -26,28 +26,6 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('scrolled');
     }
-});
-
-// === Scroll animations (Intersection Observer) ===
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            // Stagger the animation slightly
-            setTimeout(() => {
-                entry.target.classList.add('visible');
-            }, index * 80);
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.fade-up').forEach(el => {
-    observer.observe(el);
 });
 
 // === Contact form handling (Google Sheets + email) ===
@@ -102,7 +80,7 @@ contactForm.addEventListener('submit', function(e) {
     .catch(err => {
         console.error('Odeslání zprávy selhalo:', err);
         formStatus.className = 'form-status error';
-        formStatus.textContent = 'Omlouváme se, odeslání se nepodařilo. Zkuste to prosím znovu nebo napište na email.';
+        formStatus.textContent = 'Omlouvám se, odeslání se nepodařilo. Zkuste to prosím znovu nebo napište na email.';
     })
     .finally(() => {
         submitBtn.disabled = false;
